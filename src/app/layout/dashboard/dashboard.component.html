@@ -1,0 +1,224 @@
+<div [@routerTransition] style="height: -webkit-fill-available;">
+
+    <div class="row">
+        <!-- <div class="col col-sm-6">
+            <div class="card mb-3">
+                <div class="card-header">
+                    Bar Chart
+                </div>
+                <div class="card-body">
+                    <canvas baseChart [datasets]="barChartData" [labels]="barChartLabels" [options]="barChartOptions"
+                        [legend]="barChartLegend" [chartType]="barChartType" (chartHover)="chartHovered($event)"
+                        (chartClick)="chartClicked($event)">
+                    </canvas>
+                </div>
+                <div class="card-footer">
+                    <button class="btn btn-info btn-sm" (click)="randomize()">Update</button>
+                </div>
+            </div>
+        </div> -->
+        <div class="col col-sm-12">
+            <div class="card mb-3">
+                <div class="card-header">
+                    Pedidos
+                </div>
+                <div class="col col-sm-12">
+                    <div class="col col-sm-6 cstomrspace">
+                        <div class="card-body">
+                            <form role="form" [formGroup]="orderForm">
+
+                                <div class="form-group has-success">
+                                    <label class="form-control-label" for="inputSuccess">Fecha desde</label>
+                                    <div class="form-group">
+                                        <input type="text" formControlName="dt1" placeholder="Datepicker" class="form-control"
+                                            bsDatepicker>
+                                    </div>
+                                </div>
+
+                                <div class="form-group has-warning">
+                                    <label class="form-control-label" for="inputWarning">Fecha hasta</label>
+                                    <input type="text" formControlName="dt2" placeholder="Datepicker" class="form-control"
+                                        bsDatepicker>
+                                </div>
+
+                                <div class="form-group has-danger">
+                                    <label class="form-control-label" for="inputError">Ciudad</label>
+                                    <select class="form-control" formControlName="dd1">
+                                        <option value="Todo">Todo</option>
+                                        <option value="DIAPA">DIAPA</option>
+                                        <option value="DIBAR">DIBAR</option>
+                                        <option value="DIBOG">DIBOG</option>
+                                        <option value="DICAL">DICAL</option>
+                                        <option value="DIMED">DIMED</option>
+                                        <option value="DIPAS">DIPAS</option>
+                                        <option value="MOTOS">MOTOS</option>
+                                    </select>
+                                </div>
+
+                                <label class="form-control-label" for="inputSuccess">Gerentes de unidad</label>
+                                <select class="form-control" formControlName="dd2">
+                                    <option value="Todo">Todo</option>
+                                    <option value="71786951-JUAN GUILLERMO LOPEZ CANO">71786951-JUAN GUILLERMO LOPEZ
+                                        CANO </option>
+                                </select>
+
+
+                                <div class="form-group has-warning">
+                                    <label class="form-control-label" for="inputWarning">Zonas</label>
+                                    <select class="form-control" formControlName="dd3">
+                                        <option value="Todo">Todo</option>
+                                        <option value="AGM303">AGM303</option>
+                                        <option value="BRM010">BRM010</option>
+                                        <option value="POM107">POM107</option>
+                                        <option value="POM109">POM109</option>
+                                        <option value="POM111">POM111</option>
+                                        <option value="POM112">POM112</option>
+                                        <option value="POM113">POM113</option>
+                                        <option value="POM114">POM114</option>
+                                        <option value="POM115">POM115</option>
+                                        <option value="POM119">POM119</option>
+                                        <option value="POM240">POM240</option>
+                                        <option value="POM242">POM242</option>
+                                        <option value="POM246">POM246</option>
+                                        <option value="POM247">POM247</option>
+                                        <option value="SUBM01">SUBM01</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group has-danger">
+                                    <label class="form-control-label" for="inputError">Vendedores</label>
+                                    <select class="form-control" formControlName="dd4">
+                                        <option value="">Todo</option>
+                                        <option value="1027951246-PALACIOS LAN JHON JADER">1027951246-PALACIOS LAN JHON
+                                            JADER </option>
+                                        <option value="1027961704-GAVIRIA CARDENAS ELVER FERNANDO">1027961704-GAVIRIA
+                                            CARDENAS ELVER FERNANDO </option>
+                                        <option value="1027965106-ROMA?A CUESTA MIRIAM">1027965106-ROMA?A CUESTA MIRIAM
+                                        </option>
+                                        <option value="1027998628-ALVAREZ CADAVID ELIANA PATRICIA">1027998628-ALVAREZ
+                                            CADAVID ELIANA PATRICIA </option>
+                                        <option value="1040364822-MOSQUERA LIZARDA CARLOS MARIO">1040364822-MOSQUERA
+                                            LIZARDA CARLOS MARIO </option>
+                                        <option value="1040371817-PALACIOS BERRIO JUAN CAMILO">1040371817-PALACIOS
+                                            BERRIO JUAN CAMILO </option>
+                                        <option value="1050951534-COTTE MARTINEZ LUIS ALEJANDRO">1050951534-COTTE
+                                            MARTINEZ LUIS ALEJANDRO </option>
+                                        <option value="1050951534-COTTE MARTINEZ LUIS ALEJANDRO">1050951534-COTTE
+                                            MARTINEZ LUIS ALEJANDRO </option>
+                                        <option value="1067888072-Mendoza Arrieta Angela Marcela">1067888072-Mendoza
+                                            Arrieta Angela Marcela </option>
+                                        <option value="32256463-Giraldo Sanchez Mary Celiana">32256463-Giraldo Sanchez
+                                            Mary Celiana </option>
+                                        <option value="32273875-Osorio Guerra Johana Andrea">32273875-Osorio Guerra
+                                            Johana Andrea </option>
+                                        <option value="43834765-Oporto Casta?o Karol Cristina">43834765-Oporto Casta?o
+                                            Karol Cristina </option>
+                                        <option value="999999-Vendedor generic">999999-Vendedor generico </option>
+                                    </select>
+                                </div>
+                                <div class="form-group has-danger">
+                                    <button class="btn btn-info btn-sm" [disabled]="!orderForm.valid" (click)="gettingdata()">
+                                        {{loading ? 'Update' : 'Updating'}}</button>
+                                </div>
+
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col col-sm-6" style="float: right;margin-top: 5%;" [hidden]="!chartshow">
+                        <a type="button" class="btn btn-primary" (click)="gettcsvData()" style="background-color: #00777A;color: #FFF;margin-bottom: 24px;    float: right;width: 120px;">
+                            <i class="fa fa-upload"></i>Export
+                        </a>
+                        <canvas baseChart [datasets]="barChartData" [labels]="barChartLabels" [options]="barChartOptions"
+                            [legend]="barChartLegend" [chartType]="barChartType" (chartHover)="chartHovered($event)"
+                            (chartClick)="chartClicked($event)">
+                        </canvas>
+                    </div>
+
+                </div>
+                <div class="col col-sm-12" [hidden]="!tableshow">
+                    <div class="card mb-3 spacing tablehide">
+                        <div class="card-header">Striped Rows</div>
+                        <div class="card-body table-responsive">
+                            <table class="table table-hover table-striped">
+                                <thead>
+
+                                    <tr>
+                                        <th>No</th>
+                                        <!-- <th><a href="/orders/index/sort:id/direction:asc">No</a></th> -->
+                                        <th>Vendedor</th>
+                                        <th>Cliente</th>
+                                        <th>SKU</th>
+
+                                        <th>Total venta</th>
+                                        <th>Fecha digitación</th>
+                                        <th>Fecha envío</th>
+                                        <th>Estado</th>
+
+                                    </tr>
+
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let data of datas; let i = index">
+                                        <td>{{data.No}}</td>
+                                        <td>{{data.Vendedor}}</td>
+                                        <td>{{data.Cliente}}</td>
+                                        <td>{{data.SKU}}</td>
+                                        <td>{{data.venta}}</td>
+                                        <td>{{data.digitacin}}</td>
+                                        <td>{{data.envo}}</td>
+                                        <td>{{data.Estado}}</td>
+
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+</div>
+<div class="col col-xl-6 col-lg-12 tableshow" [hidden]="!tableshow" style="margin-top: 144px;">
+    <div class="card mb-3  ">
+        <div class="card-header">Striped Rows</div>
+        <div class="card-body table-responsive">
+            <table class="table table-hover table-striped">
+                <thead>
+
+                    <tr>
+                        <th>No</th>
+                        <!-- <th><a href="/orders/index/sort:id/direction:asc">No</a></th> -->
+                        <th>Vendedor</th>
+                        <th>Cliente</th>
+                        <th>SKU</th>
+
+                        <th>Total venta</th>
+                        <th>Fecha digitación</th>
+                        <th>Fecha envío</th>
+                        <th>Estado</th>
+
+                    </tr>
+
+                </thead>
+                <tbody>
+                    <tr *ngFor="let data of datas; let i = index">
+                        <td>{{data.No}}</td>
+                        <td>{{data.Vendedor}}</td>
+                        <td>{{data.Cliente}}</td>
+                        <td>{{data.SKU}}</td>
+                        <td>{{data.venta}}</td>
+                        <td>{{data.digitacin}}</td>
+                        <td>{{data.envo}}</td>
+                        <td>{{data.Estado}}</td>
+
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
